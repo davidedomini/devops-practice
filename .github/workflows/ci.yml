@@ -2,3 +2,36 @@
 
 name: CI
 
+'on':
+  push:
+
+jobs:
+  test-hello:
+    name: Test hello world on jvm
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+        java-version:
+          - 11
+          - 18
+        jdk-distribution:
+          - adopt-hotspot
+          - adopt-openj9
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: JDK ${{ matrix.jdk-distribution }} v${{ matrix.java-version }}
+        uses: actions/setup-java@v3
+        with:
+          distribution: ${{ matrix.jdk-distribution }}
+          version: ${{ matrix.java-version }}
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-dept: 0
+
+      - name:
+        run: gradle test
