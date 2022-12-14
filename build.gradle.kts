@@ -1,9 +1,9 @@
 plugins {
     kotlin("jvm") version "1.5.31"
-    java
+    application
 }
 
-group = "org.example"
+group = "it.unibo.lss"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -18,4 +18,8 @@ dependencies {
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
+}
+
+application {
+    mainClass.set("it.unibo.lss.HelloClassKt")
 }
