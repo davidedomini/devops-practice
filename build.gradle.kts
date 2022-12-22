@@ -7,7 +7,6 @@ plugins {
 }
 
 group = "io.github.davidedomini"
-version = "1.0"
 
 repositories {
     mavenCentral()

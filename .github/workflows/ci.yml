@@ -36,7 +36,7 @@ jobs:
         run: ./gradlew test
 
   test-release:
-    name: Release
+    name: Test Release
     runs-on: ubuntu-latest
     if: >-
       !github.event.repository.fork
