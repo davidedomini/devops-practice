@@ -37,8 +37,6 @@ jobs:
 
   test-release:
     name: Release
-    needs:
-      - test-hello
     runs-on: ubuntu-latest
     if: >-
       !github.event.repository.fork
@@ -68,4 +66,4 @@ jobs:
           MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEY }}
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
-        run: ./gradlew uploadAllPublicationsToMavenCentralNexus closeStagingRepositoryOnMavenCentral --stacktrace
+        run: ./gradlew uploadAllPublicationsToMavenCentralNexus closeStagingRepositoryOnMavenCentral
