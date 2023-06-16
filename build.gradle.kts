@@ -1,7 +1,7 @@
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.8.21"
     id("org.jetbrains.dokka") version "1.8.20"
-    id ("org.danilopianini.publish-on-central") version "5.0.6"
+    id ("org.danilopianini.publish-on-central") version "5.0.7"
     id("org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin") version "1.1.10"
     application
 }
