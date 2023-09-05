@@ -28,7 +28,7 @@ jobs:
           distribution: ${{ matrix.jdk-distribution }}
           java-version: ${{ matrix.java-version }}
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodule: recursive
           fetch-dept: 0
@@ -49,7 +49,7 @@ jobs:
       cancel-in-progress: true
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
@@ -85,7 +85,7 @@ jobs:
       group: release-${{ github.event.number || github.ref }}
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
